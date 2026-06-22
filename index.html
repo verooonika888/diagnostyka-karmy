@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Діагностика | Владислава</title>
+    <!-- Підключення шрифтів -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Підключення Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accentRed: '#d32f2f',
+                        accentBlue: '#2563eb',
+                        darkBg: '#050505',
+                        darkCard: '#1a1a1a'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Базові налаштування */
+        body { color: #ffffff; background-color: #050505; }
+        html { scroll-behavior: smooth; }
+        
+        /* Світіння Червоно-Синє */
+        .text-glow-mixed { text-shadow: 0 0 25px rgba(37, 99, 235, 0.9), 0 0 10px rgba(211, 47, 47, 0.9); }
+        .gradient-text { background: linear-gradient(90deg, #ef4444, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .mixed-shadow { box-shadow: 0 0 30px rgba(139, 92, 246, 0.25); }
+        
+        /* Скляні картки */
+        .glass-card { 
+            background: rgba(15, 15, 20, 0.6); 
+            backdrop-filter: blur(15px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+        }
+
+        /* Градієнтна кнопка */
+        .btn-gradient {
+            background: linear-gradient(90deg, #d32f2f 0%, #2563eb 100%);
+            background-size: 200% auto;
+            transition: 0.5s;
+        }
+        .btn-gradient:hover { background-position: right center; box-shadow: 0 0 25px rgba(139, 92, 246, 0.6); }
+        
+        /* Скролбар */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Валідація */
+        .input-error { border-color: #ef4444 !important; background-color: rgba(239, 68, 68, 0.05) !important; }
+        .error-message { display: none; color: #ef4444; font-size: 0.7rem; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .input-error + .error-message { display: block; }
+    </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2118340622444832');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2118340622444832&ev=PageView&noscript=1"/></noscript>
+</head>
+<body class="font-sans antialiased selection:bg-accentBlue selection:text-white pb-20 md:pb-0 relative min-h-screen flex flex-col justify-between"> 
+
+    <!-- ФОН -->
+    <img src="bg-mystic.jpg" alt="Фон" class="fixed inset-0 w-full h-full object-cover z-[-2] pointer-events-none opacity-50">
+    <div class="fixed inset-0 w-full h-full bg-gradient-to-br from-black via-[#050505] to-[#0a0a1a] z-[-1] pointer-events-none opacity-80"></div>
+
+    <!-- МОБІЛЬНА КНОПКА (Фіксована знизу) -->
+    <div class="fixed bottom-0 left-0 w-full z-50 p-3 bg-black/80 backdrop-blur-md border-t border-accentBlue/30 md:hidden">
+        <button class="open-modal-btn block w-full btn-gradient text-white font-extrabold text-sm py-4 text-center rounded-xl uppercase tracking-wider transition transform active:scale-95">
+            ЗАПИСАТИСЯ НА ДІАГНОСТИКУ
+        </button>
+    </div>
+
+    <!-- ГОЛОВНИЙ ЕКРАН (Єдиний блок на сайті) -->
+    <main class="flex-grow flex flex-col items-center justify-center pt-10 pb-16 px-4 relative z-10">
+        
+        <div class="w-full max-w-4xl mx-auto text-center flex flex-col items-center">
+            
+            <div class="inline-block border border-white/10 px-5 py-1.5 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6 text-gray-300 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(37,99,235,0.2)]">
+                Діагностика
+            </div>
+
+            <!-- ГОЛОВНИЙ ОФЕР -->
+            <h1 class="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-5 uppercase drop-shadow-xl">
+                Діагностика <span class="gradient-text text-glow-mixed">поточного кармічного уроку</span>, який стопорить зміни в твоєму житті
+            </h1>
+            
+            <p class="text-sm md:text-lg text-gray-300 mb-10 font-light max-w-3xl mx-auto leading-relaxed">
+                Дізнайся, який кармічний урок тобі зараз треба пройти і що зрозуміти, щоб перейти на наступний новий рівень твого життя і запустити зміни.
+            </p>
+
+            <!-- БЛОК ОПЛАТИ / ТАЙМЕР -->
+            <div class="glass-card p-6 md:p-8 rounded-3xl w-full max-w-md mx-auto mixed-shadow relative overflow-hidden mb-12">
+                <div class="absolute inset-0 bg-gradient-to-tr from-accentRed/10 to-accentBlue/10 pointer-events-none"></div>
+
+                <div class="relative z-10">
+                    <div class="text-gray-400 text-lg md:text-xl font-medium mb-1">
+                        <strike>80 €</strike>
+                    </div>
+                    <div class="gradient-text text-5xl md:text-6xl font-extrabold drop-shadow-lg leading-none mb-3">
+                        29 €
+                    </div>
+                    <div class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest mb-4 font-semibold border-b border-white/10 pb-4">
+                        до підвищення ціни:
+                    </div>
+                    
+                    <!-- Таймер на 2 години -->
+                    <div class="flex justify-center gap-4 text-3xl font-bold mb-6 text-white" id="timer">
+                        <div class="flex flex-col items-center"><span id="hours">02</span><span class="text-[9px] text-gray-500 font-normal uppercase tracking-widest mt-1">Год</span></div>
+                        <div class="pb-1 text-gray-600">:</div>
+                        <div class="flex flex-col items-center"><span id="mins">00</span><span class="text-[9px] text-gray-500 font-normal uppercase tracking-widest mt-1">Хв</span></div>
+                        <div class="pb-1 text-gray-600">:</div>
+                        <div class="flex flex-col items-center"><span id="secs">00</span><span class="text-[9px] text-gray-500 font-normal uppercase tracking-widest mt-1">Сек</span></div>
+                    </div>
+                    
+                    <button class="open-modal-btn block w-full btn-gradient text-white font-bold py-4 rounded-xl uppercase tracking-wider transition transform hover:scale-105 shadow-lg">
+                        ЗАПИСАТИСЯ НА ДІАГНОСТИКУ
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3 БЛОКИ: ЩО В СЕРЕДИНІ (Без емодзі, переміщено вниз) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl text-center">
+                <div class="glass-card p-6 rounded-2xl text-left border-l-2 border-accentBlue hover:-translate-y-1 transition duration-300">
+                    <h3 class="font-bold text-white mb-2 uppercase text-sm">Зчитування поля</h3>
+                    <p class="text-xs text-gray-400 font-light">Глибокий аналіз твого поточного стану, проблем та підсвідомих блоків, які ти не помічаєш.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-left border-l-2 border-purple-500 hover:-translate-y-1 transition duration-300">
+                    <h3 class="font-bold text-white mb-2 uppercase text-sm">Твоя задача</h3>
+                    <p class="text-xs text-gray-400 font-light">Визначення головного кармічного уроку, через який ти ходиш по колу невдач.</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl text-left border-l-2 border-accentRed hover:-translate-y-1 transition duration-300">
+                    <h3 class="font-bold text-white mb-2 uppercase text-sm">Інструмент виходу</h3>
+                    <p class="text-xs text-gray-400 font-light">Що конкретно тобі треба зробити зараз, щоб розірвати цикл і почати жити так як хочеш.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ФУТЕР -->
+    <footer class="py-6 text-center border-t border-white/5 text-gray-600 text-[10px] tracking-widest uppercase bg-black/60 backdrop-blur-md relative z-10">
+        <p>© 2026 | ВЛАДИСЛАВА</p>
+    </footer>
+
+    <!-- POP-UP МОДАЛЬНЕ ВІКНО З ФОРМОЮ ОПЛАТИ -->
+    <div id="order-modal" class="fixed inset-0 z-[200] bg-black/90 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 backdrop-blur-md">
+        <div class="relative glass-card p-6 md:p-8 rounded-2xl w-full max-w-[400px] border border-accentBlue/50 mixed-shadow transform transition-all">
+            <button id="close-modal" class="absolute top-4 right-5 text-gray-400 hover:text-white text-3xl font-light focus:outline-none">&times;</button>
+            
+            <h3 class="text-xl md:text-2xl font-bold text-center mb-1 uppercase text-white drop-shadow-md">ВІДКРИТИ ДОСТУП</h3>
+            <p class="text-center text-gray-400 text-xs mb-6 font-light">Введіть дані для запису на діагностику.</p>
+            
+            <form id="popupForm" class="space-y-4" novalidate>
+                <div>
+                    <label class="block text-[10px] text-gray-400 uppercase tracking-wider mb-1.5">Ваше ім'я</label>
+                    <input type="text" id="pop-name" placeholder="Ім'я" class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm">
+                    <span class="error-message" id="error-name">Мінімум 3 символи</span>
+                </div>
+                
+                <div>
+                    <label class="block text-[10px] text-gray-400 uppercase tracking-wider mb-1.5">Номер телефону</label>
+                    <input type="tel" id="pop-phone" placeholder="+380..." class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm">
+                    <span class="error-message" id="error-phone">Введіть коректний номер</span>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] text-gray-400 uppercase tracking-wider mb-1.5">Ваш Telegram</label>
+                    <input type="text" id="pop-telegram" placeholder="@username або номер" class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm">
+                    <span class="error-message" id="error-telegram">Мінімум 3 символи</span>
+                </div>
+                
+                <div class="pt-2">
+                    <div class="flex justify-between items-center bg-black/60 border border-white/5 rounded-xl p-4 mb-2">
+                        <span class="text-gray-400 uppercase tracking-widest text-xs font-bold">До сплати:</span>
+                        <div class="flex items-baseline gap-3">
+                            <span class="text-gray-600 line-through text-sm">80 €</span>
+                            <span class="gradient-text font-extrabold text-2xl leading-none">29 €</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pt-2">
+                    <button type="submit" class="w-full btn-gradient text-white font-bold py-4 rounded-xl uppercase tracking-wider transition transform active:scale-95 shadow-[0_0_15px_rgba(37,99,235,0.4)]">
+                        ПЕРЕЙТИ ДО ОПЛАТИ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // --- ТАЙМЕР НА 2 ГОДИНИ ---
+        let time = 2 * 60 * 60; 
+        const hoursEl = document.getElementById('hours');
+        const minsEl = document.getElementById('mins');
+        const secsEl = document.getElementById('secs');
+
+        setInterval(() => {
+            let h = Math.floor(time / 3600);
+            let m = Math.floor((time % 3600) / 60);
+            let s = time % 60;
+            
+            hoursEl.innerHTML = h < 10 ? '0' + h : h;
+            minsEl.innerHTML = m < 10 ? '0' + m : m;
+            secsEl.innerHTML = s < 10 ? '0' + s : s;
+            
+            if(time > 0) time--;
+        }, 1000);
+
+        // --- POP-UP ФОРМА ---
+        const orderModal = document.getElementById('order-modal');
+        const openModalBtns = document.querySelectorAll('.open-modal-btn');
+        const closeModalBtn = document.getElementById('close-modal');
+        const popupForm = document.getElementById('popupForm');
+
+        openModalBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                orderModal.classList.remove('hidden');
+                setTimeout(() => { orderModal.classList.remove('opacity-0'); }, 10);
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        const closeOrderModal = () => {
+            orderModal.classList.add('opacity-0');
+            setTimeout(() => { 
+                orderModal.classList.add('hidden'); 
+                document.body.style.overflow = ''; 
+            }, 300);
+        };
+
+        closeModalBtn.addEventListener('click', closeOrderModal);
+        orderModal.addEventListener('click', (e) => { if (e.target === orderModal) closeOrderModal(); });
+
+        function getUTMs() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                utm_source: urlParams.get('utm_source') || '',
+                utm_medium: urlParams.get('utm_medium') || '',
+                utm_campaign: urlParams.get('utm_campaign') || ''
+            };
+        }
+
+        // --- ВАЛІДАЦІЯ ТА ВІДПРАВКА ---
+        popupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+
+            const nameInput = document.getElementById('pop-name');
+            const phoneInput = document.getElementById('pop-phone');
+            const tgInput = document.getElementById('pop-telegram');
+            const submitBtn = popupForm.querySelector('button[type="submit"]');
+
+            const showError = (input) => {
+                input.classList.add('input-error');
+                input.classList.remove('focus:border-accentBlue');
+                isValid = false;
+            };
+            const clearError = (input) => {
+                input.classList.remove('input-error');
+                input.classList.add('focus:border-accentBlue');
+            };
+
+            if (nameInput.value.trim().length < 3) showError(nameInput); else clearError(nameInput);
+            if (tgInput.value.trim().length < 3) showError(tgInput); else clearError(tgInput);
+            
+            const phoneRegex = /^\+?[0-9\s\-()]{9,15}$/;
+            const phoneVal = phoneInput.value.trim().replace(/\s+/g, ''); 
+            if (!phoneRegex.test(phoneVal)) showError(phoneInput); else clearError(phoneInput);
+
+            if (isValid) {
+                submitBtn.innerText = 'ОБРОБКА...';
+                submitBtn.disabled = true;
+
+                // ВАШІ ПОСИЛАННЯ (ВСТАВИТИ ТУТ)
+                const googleScriptURL = 'YOUR_GOOGLE_SCRIPT_URL_HERE'; 
+                const paymentURL = 'YOUR_WAYFORPAY_URL_HERE';
+
+                const formData = new FormData();
+                formData.append('name', nameInput.value.trim());
+                formData.append('phone', phoneInput.value.trim());
+                formData.append('telegram', tgInput.value.trim()); 
+                formData.append('product', 'Personal Reading 29 EUR'); 
+                
+                const utms = getUTMs();
+                formData.append('utm_source', utms.utm_source);
+                formData.append('utm_medium', utms.utm_medium);
+                formData.append('utm_campaign', utms.utm_campaign);
+
+                fetch(googleScriptURL, { method: 'POST', body: formData, mode: 'no-cors' })
+                .then(() => { window.location.href = paymentURL; })
+                .catch(() => { window.location.href = paymentURL; });
+            }
+        });
+
+        // Очищення помилок під час вводу
+        [document.getElementById('pop-name'), document.getElementById('pop-phone'), document.getElementById('pop-telegram')].forEach(input => {
+            input.addEventListener('input', () => {
+                input.classList.remove('input-error');
+                input.classList.add('focus:border-accentBlue');
+            });
+        });
+    </script>
+</body>
+</html>
