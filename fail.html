@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Помилка оплати | Владислава</title>
+    <!-- Підключення шрифтів -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Підключення Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 
+                        accentRed: '#d32f2f', 
+                        accentBlue: '#2563eb', 
+                        darkBg: '#050505', 
+                        darkCard: '#1a1a1a' 
+                    },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Базові налаштування */
+        body { color: #ffffff; background-color: #050505; }
+        
+        /* Скляні картки */
+        .glass-card { background: rgba(15, 15, 20, 0.6); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .error-glow { filter: drop-shadow(0 0 15px rgba(211, 47, 47, 0.6)); }
+        
+        /* Градієнтна кнопка */
+        .btn-gradient { background: linear-gradient(90deg, #d32f2f 0%, #2563eb 100%); background-size: 200% auto; transition: 0.5s; }
+        .btn-gradient:hover { background-position: right center; box-shadow: 0 0 25px rgba(139, 92, 246, 0.6); }
+    </style>
+</head>
+<body class="font-sans antialiased relative min-h-[100dvh] flex flex-col items-center justify-center p-4"> 
+
+    <!-- ФОН -->
+    <img src="fon.jpg" alt="Фон" class="fixed inset-0 w-full h-full object-cover z-[-2] pointer-events-none opacity-50">
+    <div class="fixed inset-0 w-full h-full bg-gradient-to-br from-black via-[#050505] to-[#0a0a1a] z-[-1] pointer-events-none opacity-80"></div>
+
+    <!-- КАРТКА ПОМИЛКИ -->
+    <div class="relative z-10 glass-card p-8 md:p-10 rounded-3xl w-full max-w-[400px] text-center shadow-2xl border-t border-accentRed/50">
+        
+        <!-- Іконка хрестика -->
+        <div class="mx-auto flex items-center justify-center w-20 h-20 bg-accentRed/10 rounded-full border border-accentRed/30 mb-6 error-glow">
+            <svg class="w-10 h-10 text-accentRed" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </div>
+
+        <h1 class="text-2xl font-extrabold mb-4 uppercase tracking-wide">Сталася помилка</h1>
+        
+        <p class="text-gray-300 text-sm leading-relaxed mb-8 font-light">
+            На жаль, твою транзакцію було відхилено банком, або сталася технічна помилка.<br><br>
+            <strong class="text-white font-semibold">Твої кошти не були списані.</strong><br> Будь ласка, перевір ліміти на картці або спробуй іншу.
+        </p>
+
+        <!-- Кнопка спробувати ще раз -->
+        <a href="https://secure.wayforpay.com/button/bb7a1e4584872" class="block w-full btn-gradient text-white font-bold py-4 rounded-xl uppercase tracking-wider transition transform active:scale-95 text-center shadow-lg">
+            Спробувати ще раз
+        </a>
+    </div>
+
+</body>
+</html>
