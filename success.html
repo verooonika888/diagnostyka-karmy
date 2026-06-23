@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Оплата успішна | Владислава</title>
+    <!-- Підключення шрифтів -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Підключення Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 
+                        accentRed: '#d32f2f', 
+                        accentBlue: '#2563eb', 
+                        darkBg: '#050505', 
+                        darkCard: '#1a1a1a' 
+                    },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Базові налаштування */
+        body { color: #ffffff; background-color: #050505; }
+        
+        /* Скляні картки */
+        .glass-card { background: rgba(15, 15, 20, 0.6); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .success-glow { filter: drop-shadow(0 0 15px rgba(34, 197, 94, 0.6)); }
+        
+        /* Градієнтна кнопка */
+        .btn-gradient { background: linear-gradient(90deg, #d32f2f 0%, #2563eb 100%); background-size: 200% auto; transition: 0.5s; }
+        .btn-gradient:hover { background-position: right center; box-shadow: 0 0 25px rgba(139, 92, 246, 0.6); }
+    </style>
+
+    <!-- ========================================== -->
+    <!-- КОД FACEBOOK PIXEL (Фіксація успішної покупки) -->
+    <!-- ========================================== -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Ініціалізація Пікселя
+    fbq('init', '2118340622444832');
+    fbq('track', 'PageView');
+    
+    // Передача події "ПОКУПКА" (Purchase) на суму 29 Євро
+    fbq('track', 'Purchase', {
+        value: 29.00,
+        currency: 'EUR'
+    });
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2118340622444832&ev=PageView&noscript=1"/></noscript>
+    <!-- ========================================== -->
+
+</head>
+<body class="font-sans antialiased relative min-h-[100dvh] flex flex-col items-center justify-center p-4"> 
+
+    <!-- ФОН -->
+    <img src="fon.jpg" alt="Фон" class="fixed inset-0 w-full h-full object-cover z-[-2] pointer-events-none opacity-50">
+    <div class="fixed inset-0 w-full h-full bg-gradient-to-br from-black via-[#050505] to-[#0a0a1a] z-[-1] pointer-events-none opacity-80"></div>
+
+    <!-- КАРТКА УСПІХУ (Виведена на передній план) -->
+    <div class="relative z-10 glass-card p-8 md:p-10 rounded-3xl w-full max-w-[400px] text-center shadow-2xl border-t border-green-500/30">
+        
+        <!-- Іконка галочки -->
+        <div class="mx-auto flex items-center justify-center w-20 h-20 bg-green-500/10 rounded-full border border-green-500/30 mb-6 success-glow">
+            <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+            </svg>
+        </div>
+
+        <h1 class="text-2xl font-extrabold mb-4 uppercase tracking-wide">Оплата успішна!</h1>
+        
+        <p class="text-gray-300 text-sm leading-relaxed mb-8 font-light">
+            Дякую за довіру. Твоє місце заброньовано. <br><br>
+            <strong class="text-white font-semibold">Я зв'яжусь з тобою у Telegram найближчим часом</strong>, щоб узгодити дату та час нашої діагностики.<br><br>
+            А поки переходь у мій Telegram-канал. Там багато корисного!
+        </p>
+
+        <!-- Кнопка переходу в ТГ канал -->
+        <a href="https://t.me/+_zEUS197GKRkYzQy" target="_blank" class="block w-full btn-gradient text-white font-bold py-4 rounded-xl uppercase tracking-wider transition transform active:scale-95 text-center shadow-lg">
+            Перейти в TG канал
+        </a>
+    </div>
+
+</body>
+</html>
