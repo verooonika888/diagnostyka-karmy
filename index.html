@@ -84,82 +84,81 @@
 
     <!-- МОБІЛЬНА КНОПКА (Фіксована знизу) -->
     <div class="fixed bottom-0 left-0 w-full z-50 p-3 bg-black/80 backdrop-blur-md border-t border-accentBlue/30 md:hidden">
-        <button class="open-modal-btn block w-full btn-gradient text-white font-extrabold text-base py-4 text-center rounded-xl uppercase tracking-wider transition transform active:scale-95">
+        <button class="open-modal-btn block w-full btn-gradient text-white font-extrabold text-sm py-4 text-center rounded-xl uppercase tracking-wider transition transform active:scale-95">
             ЗАПИСАТИСЯ НА ДІАГНОСТИКУ
         </button>
     </div>
 
     <!-- ГОЛОВНИЙ ЕКРАН -->
-    <main class="flex-grow flex flex-col items-center justify-center pt-10 pb-16 px-4 relative z-10">
+    <main class="flex-grow flex flex-col items-center justify-center pt-6 pb-24 md:pb-16 px-4 relative z-10">
         
-        <div class="w-full max-w-5xl mx-auto text-center flex flex-col items-center">
+        <div class="w-full max-w-4xl mx-auto text-center flex flex-col items-center min-h-[85vh] md:min-h-0 justify-center">
             
-            <div class="inline-block border border-white/10 px-6 py-2 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase mb-6 text-gray-200 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(37,99,235,0.2)]">
+            <div class="inline-block border border-white/10 px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase mb-4 md:mb-6 text-gray-300 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(37,99,235,0.2)]">
                 Діагностика
             </div>
 
-            <!-- ГОЛОВНИЙ ОФЕР (Збільшено текст) -->
-            <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 uppercase drop-shadow-xl">
+            <!-- ГОЛОВНИЙ ОФЕР (Менший шрифт, менші відступи) -->
+            <h1 class="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-3 md:mb-5 uppercase drop-shadow-xl">
                 Діагностика <span class="gradient-text text-glow-mixed">поточного кармічного уроку</span>, який стопорить зміни в твоєму житті
             </h1>
             
-            <!-- ПІДОФЕР (Збільшено текст) -->
-            <p class="text-base md:text-xl text-gray-200 mb-10 font-light max-w-4xl mx-auto leading-relaxed">
+            <!-- ПІДОФЕР (Менший шрифт) -->
+            <p class="text-xs md:text-base text-gray-300 mb-6 md:mb-10 font-light max-w-3xl mx-auto leading-relaxed">
                 Дізнайся, який кармічний урок тобі зараз треба пройти і що зрозуміти, щоб перейти на наступний новий рівень твого життя і запустити зміни.
             </p>
 
-            <!-- БЛОК ОПЛАТИ / ТАЙМЕР (Зроблено компактнішим) -->
-            <!-- max-w-md змінено на max-w-sm, падінги p-6/p-8 змінено на p-5/p-6 -->
-            <div class="glass-card p-5 md:p-6 rounded-3xl w-full max-w-sm mx-auto mixed-shadow relative overflow-hidden mb-14">
+            <!-- БЛОК ОПЛАТИ / ТАЙМЕР (Ще компактніший для мобільних) -->
+            <div class="glass-card p-4 md:p-6 rounded-3xl w-full max-w-[280px] md:max-w-sm mx-auto mixed-shadow relative overflow-hidden mb-8 md:mb-12">
                 <div class="absolute inset-0 bg-gradient-to-tr from-accentRed/10 to-accentBlue/10 pointer-events-none"></div>
 
                 <div class="relative z-10">
-                    <div class="text-gray-400 text-base md:text-lg font-medium mb-1">
+                    <div class="text-gray-400 text-sm md:text-base font-medium mb-1">
                         <strike>80 €</strike>
                     </div>
-                    <div class="gradient-text text-5xl font-extrabold drop-shadow-lg leading-none mb-3">
+                    <div class="gradient-text text-4xl md:text-5xl font-extrabold drop-shadow-lg leading-none mb-2 md:mb-3">
                         29 €
                     </div>
-                    <div class="text-[10px] text-gray-400 uppercase tracking-widest mb-4 font-semibold border-b border-white/10 pb-4">
+                    <div class="text-[9px] md:text-[10px] text-gray-400 uppercase tracking-widest mb-3 md:mb-4 font-semibold border-b border-white/10 pb-3">
                         до підвищення ціни:
                     </div>
                     
                     <!-- Таймер на 2 години -->
-                    <div class="flex justify-center gap-4 text-3xl font-bold mb-6 text-white" id="timer">
-                        <div class="flex flex-col items-center"><span id="hours">02</span><span class="text-[9px] text-gray-500 font-normal uppercase tracking-widest mt-1">Год</span></div>
+                    <div class="flex justify-center gap-3 text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-white" id="timer">
+                        <div class="flex flex-col items-center"><span id="hours">02</span><span class="text-[8px] md:text-[9px] text-gray-500 font-normal uppercase tracking-widest mt-1">Год</span></div>
                         <div class="pb-1 text-gray-600">:</div>
-                        <div class="flex flex-col items-center"><span id="mins">00</span><span class="text-[9px] text-gray-500 font-normal uppercase tracking-widest mt-1">Хв</span></div>
+                        <div class="flex flex-col items-center"><span id="mins">00</span><span class="text-[8px] md:text-[9px] text-gray-500 font-normal uppercase tracking-widest mt-1">Хв</span></div>
                         <div class="pb-1 text-gray-600">:</div>
-                        <div class="flex flex-col items-center"><span id="secs">00</span><span class="text-[9px] text-gray-500 font-normal uppercase tracking-widest mt-1">Сек</span></div>
+                        <div class="flex flex-col items-center"><span id="secs">00</span><span class="text-[8px] md:text-[9px] text-gray-500 font-normal uppercase tracking-widest mt-1">Сек</span></div>
                     </div>
                     
-                    <button class="open-modal-btn block w-full btn-gradient text-white font-bold py-4 rounded-xl uppercase tracking-wider transition transform hover:scale-105 shadow-lg text-sm md:text-base">
+                    <button class="open-modal-btn block w-full btn-gradient text-white font-bold py-3 md:py-4 rounded-xl uppercase tracking-wider transition transform hover:scale-105 shadow-lg text-xs md:text-sm">
                         ЗАПИСАТИСЯ
                     </button>
                 </div>
             </div>
-
-            <!-- 3 БЛОКИ: ЩО В СЕРЕДИНІ (Збільшено текст) -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full max-w-5xl text-center">
-                <div class="glass-card p-6 md:p-8 rounded-2xl text-left border-l-4 border-accentBlue hover:-translate-y-1 transition duration-300">
-                    <h3 class="font-bold text-white mb-3 uppercase text-base md:text-lg tracking-wide">Зчитування поля</h3>
-                    <p class="text-sm md:text-base text-gray-300 font-light leading-relaxed">Глибокий аналіз твого поточного стану, проблем та підсвідомих блоків, які ти не помічаєш.</p>
-                </div>
-                <div class="glass-card p-6 md:p-8 rounded-2xl text-left border-l-4 border-purple-500 hover:-translate-y-1 transition duration-300">
-                    <h3 class="font-bold text-white mb-3 uppercase text-base md:text-lg tracking-wide">Твоя задача</h3>
-                    <p class="text-sm md:text-base text-gray-300 font-light leading-relaxed">Визначення головного кармічного уроку, через який ти ходиш по колу невдач.</p>
-                </div>
-                <div class="glass-card p-6 md:p-8 rounded-2xl text-left border-l-4 border-accentRed hover:-translate-y-1 transition duration-300">
-                    <h3 class="font-bold text-white mb-3 uppercase text-base md:text-lg tracking-wide">Інструмент виходу</h3>
-                    <p class="text-sm md:text-base text-gray-300 font-light leading-relaxed">Що конкретно тобі треба зробити зараз, щоб розірвати цикл і почати жити так як хочеш.</p>
-                </div>
-            </div>
-
         </div>
+
+        <!-- 3 БЛОКИ: ЩО В СЕРЕДИНІ (Розміщені нижче, під скролом) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl text-center mt-4 md:mt-8">
+            <div class="glass-card p-5 md:p-6 rounded-2xl text-left border-l-2 border-accentBlue hover:-translate-y-1 transition duration-300">
+                <h3 class="font-bold text-white mb-2 uppercase text-sm">Зчитування поля</h3>
+                <p class="text-xs text-gray-400 font-light">Глибокий аналіз твого поточного стану, проблем та підсвідомих блоків, які ти не помічаєш.</p>
+            </div>
+            <div class="glass-card p-5 md:p-6 rounded-2xl text-left border-l-2 border-purple-500 hover:-translate-y-1 transition duration-300">
+                <h3 class="font-bold text-white mb-2 uppercase text-sm">Твоя задача</h3>
+                <p class="text-xs text-gray-400 font-light">Визначення головного кармічного уроку, через який ти ходиш по колу невдач.</p>
+            </div>
+            <div class="glass-card p-5 md:p-6 rounded-2xl text-left border-l-2 border-accentRed hover:-translate-y-1 transition duration-300">
+                <h3 class="font-bold text-white mb-2 uppercase text-sm">Інструмент виходу</h3>
+                <p class="text-xs text-gray-400 font-light">Що конкретно тобі треба зробити зараз, щоб розірвати цикл і почати жити так як хочеш.</p>
+            </div>
+        </div>
+
     </main>
 
     <!-- ФУТЕР -->
-    <footer class="py-6 text-center border-t border-white/5 text-gray-600 text-[10px] tracking-widest uppercase bg-black/60 backdrop-blur-md relative z-10">
+    <footer class="py-6 text-center border-t border-white/5 text-gray-600 text-[10px] tracking-widest uppercase bg-black/60 backdrop-blur-md relative z-10 mt-auto">
         <p>© 2026 | ВЛАДИСЛАВА</p>
     </footer>
 
@@ -169,24 +168,24 @@
             <button id="close-modal" class="absolute top-4 right-5 text-gray-400 hover:text-white text-3xl font-light focus:outline-none">&times;</button>
             
             <h3 class="text-xl md:text-2xl font-bold text-center mb-1 uppercase text-white drop-shadow-md">ВІДКРИТИ ДОСТУП</h3>
-            <p class="text-center text-gray-400 text-sm mb-6 font-light">Введіть дані для запису на діагностику.</p>
+            <p class="text-center text-gray-400 text-xs mb-6 font-light">Введіть дані для запису на діагностику.</p>
             
             <form id="popupForm" class="space-y-4" novalidate>
                 <div>
-                    <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1.5">Ваше ім'я</label>
-                    <input type="text" id="pop-name" placeholder="Ім'я" class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm text-base">
+                    <label class="block text-[10px] text-gray-400 uppercase tracking-wider mb-1.5">Ваше ім'я</label>
+                    <input type="text" id="pop-name" placeholder="Ім'я" class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm">
                     <span class="error-message" id="error-name">Мінімум 3 символи</span>
                 </div>
                 
                 <div>
-                    <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1.5">Номер телефону</label>
-                    <input type="tel" id="pop-phone" placeholder="+380..." class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm text-base">
+                    <label class="block text-[10px] text-gray-400 uppercase tracking-wider mb-1.5">Номер телефону</label>
+                    <input type="tel" id="pop-phone" placeholder="+380..." class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm">
                     <span class="error-message" id="error-phone">Введіть коректний номер</span>
                 </div>
 
                 <div>
-                    <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1.5">Ваш Telegram</label>
-                    <input type="text" id="pop-telegram" placeholder="@username або номер" class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm text-base">
+                    <label class="block text-[10px] text-gray-400 uppercase tracking-wider mb-1.5">Ваш Telegram</label>
+                    <input type="text" id="pop-telegram" placeholder="@username або номер" class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm">
                     <span class="error-message" id="error-telegram">Мінімум 3 символи</span>
                 </div>
                 
@@ -194,14 +193,14 @@
                     <div class="flex justify-between items-center bg-black/60 border border-white/5 rounded-xl p-4 mb-2">
                         <span class="text-gray-400 uppercase tracking-widest text-xs font-bold">До сплати:</span>
                         <div class="flex items-baseline gap-3">
-                            <span class="text-gray-600 line-through text-base">80 €</span>
-                            <span class="gradient-text font-extrabold text-3xl leading-none">29 €</span>
+                            <span class="text-gray-600 line-through text-sm">80 €</span>
+                            <span class="gradient-text font-extrabold text-2xl leading-none">29 €</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="pt-2">
-                    <button type="submit" class="w-full btn-gradient text-white font-bold py-4 rounded-xl uppercase tracking-wider transition transform active:scale-95 shadow-[0_0_15px_rgba(37,99,235,0.4)] text-base">
+                    <button type="submit" class="w-full btn-gradient text-white font-bold py-4 rounded-xl uppercase tracking-wider transition transform active:scale-95 shadow-[0_0_15px_rgba(37,99,235,0.4)]">
                         ПЕРЕЙТИ ДО ОПЛАТИ
                     </button>
                 </div>
@@ -294,7 +293,6 @@
                 submitBtn.innerText = 'ОБРОБКА...';
                 submitBtn.disabled = true;
 
-                // ПОСИЛАННЯ
                 const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwwvrn6nNWql1vaAF6qx6kUNl5GcCGMU5z8vBaqtWgQ3ZQCXL7p6b_AP0GqC4Po_E2X8g/exec'; 
                 const paymentURL = 'https://secure.wayforpay.com/button/bb7a1e4584872';
 
