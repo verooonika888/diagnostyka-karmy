@@ -82,39 +82,49 @@
     <img src="fon.jpg" alt="Фон" class="fixed inset-0 w-full h-full object-cover z-[-2] pointer-events-none opacity-50">
     <div class="fixed inset-0 w-full h-full bg-gradient-to-br from-black via-[#050505] to-[#0a0a1a] z-[-1] pointer-events-none opacity-80"></div>
 
-    <!-- МОБІЛЬНА КНОПКА -->
+    <!-- МОБІЛЬНА КНОПКА (Фіксована знизу) -->
     <div class="fixed bottom-0 left-0 w-full z-50 p-3 bg-black/80 backdrop-blur-md border-t border-accentBlue/30 md:hidden">
-        <button class="open-modal-btn block w-full btn-gradient text-white font-extrabold text-sm py-4 text-center rounded-xl uppercase tracking-wider transition transform active:scale-95">
+        <button class="open-modal-btn block w-full btn-gradient text-white font-extrabold text-base py-4 text-center rounded-xl uppercase tracking-wider transition transform active:scale-95">
             ЗАПИСАТИСЯ НА ДІАГНОСТИКУ
         </button>
     </div>
 
     <!-- ГОЛОВНИЙ ЕКРАН -->
     <main class="flex-grow flex flex-col items-center justify-center pt-10 pb-16 px-4 relative z-10">
-        <div class="w-full max-w-4xl mx-auto text-center flex flex-col items-center">
-            <div class="inline-block border border-white/10 px-5 py-1.5 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase mb-6 text-gray-300 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(37,99,235,0.2)]">
+        
+        <div class="w-full max-w-5xl mx-auto text-center flex flex-col items-center">
+            
+            <div class="inline-block border border-white/10 px-6 py-2 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase mb-6 text-gray-200 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(37,99,235,0.2)]">
                 Діагностика
             </div>
 
-            <!-- ОФЕР -->
-            <h1 class="text-2xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-5 uppercase drop-shadow-xl">
+            <!-- ГОЛОВНИЙ ОФЕР (Збільшено текст) -->
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 uppercase drop-shadow-xl">
                 Діагностика <span class="gradient-text text-glow-mixed">поточного кармічного уроку</span>, який стопорить зміни в твоєму житті
             </h1>
             
-            <p class="text-sm md:text-lg text-gray-300 mb-10 font-light max-w-3xl mx-auto leading-relaxed">
+            <!-- ПІДОФЕР (Збільшено текст) -->
+            <p class="text-base md:text-xl text-gray-200 mb-10 font-light max-w-4xl mx-auto leading-relaxed">
                 Дізнайся, який кармічний урок тобі зараз треба пройти і що зрозуміти, щоб перейти на наступний новий рівень твого життя і запустити зміни.
             </p>
 
-            <!-- БЛОК ОПЛАТИ / ТАЙМЕР -->
-            <div class="glass-card p-6 md:p-8 rounded-3xl w-full max-w-md mx-auto mixed-shadow relative overflow-hidden mb-12">
+            <!-- БЛОК ОПЛАТИ / ТАЙМЕР (Зроблено компактнішим) -->
+            <!-- max-w-md змінено на max-w-sm, падінги p-6/p-8 змінено на p-5/p-6 -->
+            <div class="glass-card p-5 md:p-6 rounded-3xl w-full max-w-sm mx-auto mixed-shadow relative overflow-hidden mb-14">
                 <div class="absolute inset-0 bg-gradient-to-tr from-accentRed/10 to-accentBlue/10 pointer-events-none"></div>
+
                 <div class="relative z-10">
-                    <div class="text-gray-400 text-lg md:text-xl font-medium mb-1"><strike>80 €</strike></div>
-                    <div class="gradient-text text-5xl md:text-6xl font-extrabold drop-shadow-lg leading-none mb-3">29 €</div>
-                    <div class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest mb-4 font-semibold border-b border-white/10 pb-4">
+                    <div class="text-gray-400 text-base md:text-lg font-medium mb-1">
+                        <strike>80 €</strike>
+                    </div>
+                    <div class="gradient-text text-5xl font-extrabold drop-shadow-lg leading-none mb-3">
+                        29 €
+                    </div>
+                    <div class="text-[10px] text-gray-400 uppercase tracking-widest mb-4 font-semibold border-b border-white/10 pb-4">
                         до підвищення ціни:
                     </div>
-                    <!-- Таймер -->
+                    
+                    <!-- Таймер на 2 години -->
                     <div class="flex justify-center gap-4 text-3xl font-bold mb-6 text-white" id="timer">
                         <div class="flex flex-col items-center"><span id="hours">02</span><span class="text-[9px] text-gray-500 font-normal uppercase tracking-widest mt-1">Год</span></div>
                         <div class="pb-1 text-gray-600">:</div>
@@ -122,27 +132,29 @@
                         <div class="pb-1 text-gray-600">:</div>
                         <div class="flex flex-col items-center"><span id="secs">00</span><span class="text-[9px] text-gray-500 font-normal uppercase tracking-widest mt-1">Сек</span></div>
                     </div>
-                    <button class="open-modal-btn block w-full btn-gradient text-white font-bold py-4 rounded-xl uppercase tracking-wider transition transform hover:scale-105 shadow-lg">
-                        ЗАПИСАТИСЯ НА ДІАГНОСТИКУ
+                    
+                    <button class="open-modal-btn block w-full btn-gradient text-white font-bold py-4 rounded-xl uppercase tracking-wider transition transform hover:scale-105 shadow-lg text-sm md:text-base">
+                        ЗАПИСАТИСЯ
                     </button>
                 </div>
             </div>
 
-            <!-- 3 БЛОКИ: ЩО В СЕРЕДИНІ -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl text-center">
-                <div class="glass-card p-6 rounded-2xl text-left border-l-2 border-accentBlue hover:-translate-y-1 transition duration-300">
-                    <h3 class="font-bold text-white mb-2 uppercase text-sm">Зчитування поля</h3>
-                    <p class="text-xs text-gray-400 font-light">Глибокий аналіз твого поточного стану, проблем та підсвідомих блоків, які ти не помічаєш.</p>
+            <!-- 3 БЛОКИ: ЩО В СЕРЕДИНІ (Збільшено текст) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full max-w-5xl text-center">
+                <div class="glass-card p-6 md:p-8 rounded-2xl text-left border-l-4 border-accentBlue hover:-translate-y-1 transition duration-300">
+                    <h3 class="font-bold text-white mb-3 uppercase text-base md:text-lg tracking-wide">Зчитування поля</h3>
+                    <p class="text-sm md:text-base text-gray-300 font-light leading-relaxed">Глибокий аналіз твого поточного стану, проблем та підсвідомих блоків, які ти не помічаєш.</p>
                 </div>
-                <div class="glass-card p-6 rounded-2xl text-left border-l-2 border-purple-500 hover:-translate-y-1 transition duration-300">
-                    <h3 class="font-bold text-white mb-2 uppercase text-sm">Твоя задача</h3>
-                    <p class="text-xs text-gray-400 font-light">Визначення головного кармічного уроку, через який ти ходиш по колу невдач.</p>
+                <div class="glass-card p-6 md:p-8 rounded-2xl text-left border-l-4 border-purple-500 hover:-translate-y-1 transition duration-300">
+                    <h3 class="font-bold text-white mb-3 uppercase text-base md:text-lg tracking-wide">Твоя задача</h3>
+                    <p class="text-sm md:text-base text-gray-300 font-light leading-relaxed">Визначення головного кармічного уроку, через який ти ходиш по колу невдач.</p>
                 </div>
-                <div class="glass-card p-6 rounded-2xl text-left border-l-2 border-accentRed hover:-translate-y-1 transition duration-300">
-                    <h3 class="font-bold text-white mb-2 uppercase text-sm">Інструмент виходу</h3>
-                    <p class="text-xs text-gray-400 font-light">Що конкретно тобі треба зробити зараз, щоб розірвати цикл і почати жити так як хочеш.</p>
+                <div class="glass-card p-6 md:p-8 rounded-2xl text-left border-l-4 border-accentRed hover:-translate-y-1 transition duration-300">
+                    <h3 class="font-bold text-white mb-3 uppercase text-base md:text-lg tracking-wide">Інструмент виходу</h3>
+                    <p class="text-sm md:text-base text-gray-300 font-light leading-relaxed">Що конкретно тобі треба зробити зараз, щоб розірвати цикл і почати жити так як хочеш.</p>
                 </div>
             </div>
+
         </div>
     </main>
 
@@ -151,39 +163,45 @@
         <p>© 2026 | ВЛАДИСЛАВА</p>
     </footer>
 
-    <!-- POP-UP МОДАЛЬНЕ ВІКНО -->
+    <!-- POP-UP МОДАЛЬНЕ ВІКНО З ФОРМОЮ ОПЛАТИ -->
     <div id="order-modal" class="fixed inset-0 z-[200] bg-black/90 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 backdrop-blur-md">
         <div class="relative glass-card p-6 md:p-8 rounded-2xl w-full max-w-[400px] border border-accentBlue/50 mixed-shadow transform transition-all">
             <button id="close-modal" class="absolute top-4 right-5 text-gray-400 hover:text-white text-3xl font-light focus:outline-none">&times;</button>
+            
             <h3 class="text-xl md:text-2xl font-bold text-center mb-1 uppercase text-white drop-shadow-md">ВІДКРИТИ ДОСТУП</h3>
-            <p class="text-center text-gray-400 text-xs mb-6 font-light">Введіть дані для запису на діагностику.</p>
+            <p class="text-center text-gray-400 text-sm mb-6 font-light">Введіть дані для запису на діагностику.</p>
+            
             <form id="popupForm" class="space-y-4" novalidate>
                 <div>
-                    <label class="block text-[10px] text-gray-400 uppercase tracking-wider mb-1.5">Ваше ім'я</label>
-                    <input type="text" id="pop-name" placeholder="Ім'я" class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm">
+                    <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1.5">Ваше ім'я</label>
+                    <input type="text" id="pop-name" placeholder="Ім'я" class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm text-base">
                     <span class="error-message" id="error-name">Мінімум 3 символи</span>
                 </div>
+                
                 <div>
-                    <label class="block text-[10px] text-gray-400 uppercase tracking-wider mb-1.5">Номер телефону</label>
-                    <input type="tel" id="pop-phone" placeholder="+380..." class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm">
+                    <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1.5">Номер телефону</label>
+                    <input type="tel" id="pop-phone" placeholder="+380..." class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm text-base">
                     <span class="error-message" id="error-phone">Введіть коректний номер</span>
                 </div>
+
                 <div>
-                    <label class="block text-[10px] text-gray-400 uppercase tracking-wider mb-1.5">Ваш Telegram</label>
-                    <input type="text" id="pop-telegram" placeholder="@username або номер" class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm">
+                    <label class="block text-xs text-gray-400 uppercase tracking-wider mb-1.5">Ваш Telegram</label>
+                    <input type="text" id="pop-telegram" placeholder="@username або номер" class="w-full bg-black/50 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accentBlue transition backdrop-blur-sm text-base">
                     <span class="error-message" id="error-telegram">Мінімум 3 символи</span>
                 </div>
+                
                 <div class="pt-2">
                     <div class="flex justify-between items-center bg-black/60 border border-white/5 rounded-xl p-4 mb-2">
                         <span class="text-gray-400 uppercase tracking-widest text-xs font-bold">До сплати:</span>
                         <div class="flex items-baseline gap-3">
-                            <span class="text-gray-600 line-through text-sm">80 €</span>
-                            <span class="gradient-text font-extrabold text-2xl leading-none">29 €</span>
+                            <span class="text-gray-600 line-through text-base">80 €</span>
+                            <span class="gradient-text font-extrabold text-3xl leading-none">29 €</span>
                         </div>
                     </div>
                 </div>
+                
                 <div class="pt-2">
-                    <button type="submit" class="w-full btn-gradient text-white font-bold py-4 rounded-xl uppercase tracking-wider transition transform active:scale-95 shadow-[0_0_15px_rgba(37,99,235,0.4)]">
+                    <button type="submit" class="w-full btn-gradient text-white font-bold py-4 rounded-xl uppercase tracking-wider transition transform active:scale-95 shadow-[0_0_15px_rgba(37,99,235,0.4)] text-base">
                         ПЕРЕЙТИ ДО ОПЛАТИ
                     </button>
                 </div>
@@ -192,20 +210,25 @@
     </div>
 
     <script>
+        // --- ТАЙМЕР НА 2 ГОДИНИ ---
         let time = 2 * 60 * 60; 
         const hoursEl = document.getElementById('hours');
         const minsEl = document.getElementById('mins');
         const secsEl = document.getElementById('secs');
+
         setInterval(() => {
             let h = Math.floor(time / 3600);
             let m = Math.floor((time % 3600) / 60);
             let s = time % 60;
+            
             hoursEl.innerHTML = h < 10 ? '0' + h : h;
             minsEl.innerHTML = m < 10 ? '0' + m : m;
             secsEl.innerHTML = s < 10 ? '0' + s : s;
+            
             if(time > 0) time--;
         }, 1000);
 
+        // --- POP-UP ФОРМА ---
         const orderModal = document.getElementById('order-modal');
         const openModalBtns = document.querySelectorAll('.open-modal-btn');
         const closeModalBtn = document.getElementById('close-modal');
@@ -222,7 +245,10 @@
 
         const closeOrderModal = () => {
             orderModal.classList.add('opacity-0');
-            setTimeout(() => { orderModal.classList.add('hidden'); document.body.style.overflow = ''; }, 300);
+            setTimeout(() => { 
+                orderModal.classList.add('hidden'); 
+                document.body.style.overflow = ''; 
+            }, 300);
         };
 
         closeModalBtn.addEventListener('click', closeOrderModal);
@@ -237,19 +263,29 @@
             };
         }
 
+        // --- ВАЛІДАЦІЯ ТА ВІДПРАВКА ---
         popupForm.addEventListener('submit', function(e) {
             e.preventDefault();
             let isValid = true;
+
             const nameInput = document.getElementById('pop-name');
             const phoneInput = document.getElementById('pop-phone');
             const tgInput = document.getElementById('pop-telegram');
             const submitBtn = popupForm.querySelector('button[type="submit"]');
 
-            const showError = (input) => { input.classList.add('input-error'); input.classList.remove('focus:border-accentBlue'); isValid = false; };
-            const clearError = (input) => { input.classList.remove('input-error'); input.classList.add('focus:border-accentBlue'); };
+            const showError = (input) => {
+                input.classList.add('input-error');
+                input.classList.remove('focus:border-accentBlue');
+                isValid = false;
+            };
+            const clearError = (input) => {
+                input.classList.remove('input-error');
+                input.classList.add('focus:border-accentBlue');
+            };
 
             if (nameInput.value.trim().length < 3) showError(nameInput); else clearError(nameInput);
             if (tgInput.value.trim().length < 3) showError(tgInput); else clearError(tgInput);
+            
             const phoneRegex = /^\+?[0-9\s\-()]{9,15}$/;
             const phoneVal = phoneInput.value.trim().replace(/\s+/g, ''); 
             if (!phoneRegex.test(phoneVal)) showError(phoneInput); else clearError(phoneInput);
@@ -258,6 +294,7 @@
                 submitBtn.innerText = 'ОБРОБКА...';
                 submitBtn.disabled = true;
 
+                // ПОСИЛАННЯ
                 const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwwvrn6nNWql1vaAF6qx6kUNl5GcCGMU5z8vBaqtWgQ3ZQCXL7p6b_AP0GqC4Po_E2X8g/exec'; 
                 const paymentURL = 'https://secure.wayforpay.com/button/bb7a1e4584872';
 
@@ -266,8 +303,6 @@
                 formData.append('phone', phoneInput.value.trim());
                 formData.append('telegram', tgInput.value.trim()); 
                 formData.append('product', 'Personal Reading 29 EUR'); 
-                
-                // --- ОСЬ ВАЖЛИВИЙ РЯДОК ДЛЯ ВАШОЇ ВКАЛДКИ ---
                 formData.append('sheetName', 'Діагностика_29'); 
                 
                 const utms = getUTMs();
@@ -281,8 +316,12 @@
             }
         });
 
+        // Очищення помилок під час вводу
         [document.getElementById('pop-name'), document.getElementById('pop-phone'), document.getElementById('pop-telegram')].forEach(input => {
-            input.addEventListener('input', () => { input.classList.remove('input-error'); input.classList.add('focus:border-accentBlue'); });
+            input.addEventListener('input', () => {
+                input.classList.remove('input-error');
+                input.classList.add('focus:border-accentBlue');
+            });
         });
     </script>
 </body>
