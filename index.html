@@ -90,30 +90,30 @@
     </div>
 
     <!-- ГОЛОВНИЙ ЕКРАН -->
-    <main class="flex-grow flex flex-col items-center pt-6 pb-[84px] md:pb-16 px-4 relative z-10">
+    <main class="flex-grow flex flex-col items-center pt-4 pb-[84px] md:pb-16 px-4 relative z-10">
         
-        <!-- Контейнер, який займає всю висоту екрану мінус фіксована кнопка -->
-        <div class="w-full max-w-4xl mx-auto text-center flex flex-col items-center min-h-[calc(100vh-105px)] md:min-h-0">
+        <!-- Контейнер для першого екрану (згруповано і піднято вище за рахунок pb-8) -->
+        <div class="w-full max-w-4xl mx-auto text-center flex flex-col items-center justify-center min-h-[calc(100vh-105px)] md:min-h-0 pb-8 md:pb-0">
             
-            <!-- Блок тексту (центрується посередині) -->
-            <div class="my-auto flex flex-col items-center pt-4">
-                <div class="inline-block border border-white/10 px-5 py-1.5 rounded-full text-[10px] md:text-sm font-bold tracking-widest uppercase mb-5 md:mb-6 text-gray-200 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(37,99,235,0.2)]">
+            <!-- Блок тексту -->
+            <div class="flex flex-col items-center">
+                <div class="inline-block border border-white/10 px-5 py-1.5 rounded-full text-[10px] md:text-sm font-bold tracking-widest uppercase mb-4 md:mb-6 text-gray-200 bg-white/5 backdrop-blur-sm shadow-[0_0_15px_rgba(37,99,235,0.2)]">
                     Діагностика
                 </div>
 
-                <!-- ГОЛОВНИЙ ОФЕР (Збільшено текст) -->
+                <!-- ГОЛОВНИЙ ОФЕР -->
                 <h1 class="text-[28px] md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 md:mb-6 uppercase drop-shadow-xl">
                     Діагностика <span class="gradient-text text-glow-mixed">поточного кармічного уроку</span>, який стопорить зміни в твоєму житті
                 </h1>
                 
-                <!-- ПІДОФЕР (Збільшено текст) -->
+                <!-- ПІДОФЕР -->
                 <p class="text-sm md:text-xl text-gray-200 mb-2 font-light max-w-3xl mx-auto leading-relaxed">
                     Дізнайся, який кармічний урок тобі зараз треба пройти і що зрозуміти, щоб перейти на наступний новий рівень твого життя і запустити зміни.
                 </p>
             </div>
 
-            <!-- БЛОК ОПЛАТИ / ТАЙМЕР (Притискається до самого низу) -->
-            <div class="glass-card p-4 md:p-6 rounded-3xl w-full max-w-[300px] md:max-w-sm mx-auto mixed-shadow relative overflow-hidden mt-6 mb-0 md:mb-12">
+            <!-- БЛОК ОПЛАТИ / ТАЙМЕР -->
+            <div class="glass-card p-4 md:p-6 rounded-3xl w-full max-w-[300px] md:max-w-sm mx-auto mixed-shadow relative overflow-hidden mt-5 mb-0 md:mb-12">
                 <div class="absolute inset-0 bg-gradient-to-tr from-accentRed/10 to-accentBlue/10 pointer-events-none"></div>
 
                 <div class="relative z-10">
@@ -144,7 +144,7 @@
         </div>
 
         <!-- 3 БЛОКИ: ЩО В СЕРЕДИНІ (Розміщені нижче, під скролом) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl text-center mt-12 md:mt-8 mb-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl text-center mt-6 md:mt-8 mb-4">
             <div class="glass-card p-5 md:p-6 rounded-2xl text-left border-l-2 border-accentBlue hover:-translate-y-1 transition duration-300">
                 <h3 class="font-bold text-white mb-2 uppercase text-sm">Зчитування поля</h3>
                 <p class="text-xs md:text-sm text-gray-400 font-light">Глибокий аналіз твого поточного стану, проблем та підсвідомих блоків, які ти не помічаєш.</p>
